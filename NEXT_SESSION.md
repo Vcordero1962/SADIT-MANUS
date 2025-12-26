@@ -44,6 +44,11 @@
    - Password hardcodeado removido de docker-compose.yml
    - Force push completado a GitHub
    - Reporte de incidente creado
+   - **Herramientas de escaneo instaladas:**
+     * detect-secrets v1.5.0+
+     * pre-commit hooks configurados
+     * .secrets.baseline creado
+     * GLOBAL_AGENT_RULES.md actualizado (Sección 4.1 mandatorio)
 
 ---
 

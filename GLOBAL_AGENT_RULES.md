@@ -41,6 +41,42 @@ Antes de dar por finalizada cualquier tarea de infraestructura, **VERIFICAR**:
 ## 4. 🛡️ SEGURIDAD Y LIMPIEZA
 **Regla:** *"No dejes huellas peligrosas."*
 
+### 4.1 🔐 ESCANEO DE SECRETOS (MANDATORIO)
+**Trigger:** TODA modificación de código, antes de cualquier commit.
+
+**Herramientas Obligatorias:**
+1. **detect-secrets** (v1.5.0+): Escáner de credenciales en código fuente
+   ```bash
+   # Instalación (ya incluido en requirements.txt)
+   pip install detect-secrets
+
+   # Escaneo manual (si dudas)
+   detect-secrets scan --baseline .secrets.baseline
+   ```
+
+2. **pre-commit** (v4.0.0+): Hooks automáticos de Git
+   ```bash
+   # Instalación una sola vez
+   pre-commit install
+
+   # El hook se ejecuta AUTOMÁTICAMENTE en cada commit
+   # Si detecta secretos, BLOQUEARÁ el commit
+   ```
+
+**Configuración:**
+- Archivo: `.pre-commit-config.yaml` (ya configurado en el proyecto)
+- Baseline: `.secrets.baseline` (lista blanca de falsos positivos aprobados)
+
+**Protocolo de Trabajo:**
+1. ✅ **ANTES de codificar:** Asegúrate que `pre-commit install` esté ejecutado
+2. ✅ **AL codificar:** NUNCA escribas claves API/passwords en texto plano. Usa `.env`
+3. ✅ **AL hacer commit:** El hook detectará automáticamente secretos
+4. ❌ **SI el hook BLOQUEA:** 
+   - Revisa el archivo marcado
+   - Mueve el secreto a `.env`
+   - Si es falso positivo legítimo: `detect-secrets audit .secrets.baseline`
+
+### 4.2 🗑️ LIMPIEZA DE ARCHIVOS
 *   **Secretos:** NUNCA escribas claves API en texto plano. Usa `.env`.
 *   **Archivos Basura:** Si creas scripts temporales para debug (`test_debug.py`), bórralos al terminar.
 

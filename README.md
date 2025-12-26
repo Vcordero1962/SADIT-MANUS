@@ -201,6 +201,56 @@ docker logs sadit_core_v1 -f
 
 ---
 
+## 9. Seguridad y Escaneo de Secretos 🔐
+
+### Herramientas Instaladas
+
+El proyecto incluye herramientas automáticas para prevenir la exposición de credenciales:
+
+**1. detect-secrets (v1.5.0+)**
+- Escanea el código en busca de credenciales hardcodeadas
+- Configuración: `.secrets.baseline`
+
+**2. pre-commit (v4.0.0+)**
+- Hooks de Git que bloquean commits con secretos detectados
+- Configuración: `.pre-commit-config.yaml`
+
+### Instalación (Una sola vez)
+
+```bash
+# Instalar herramientas
+pip install -r requirements.txt
+
+# Activar hooks de Git
+pre-commit install
+```
+
+### Uso Diario
+
+**Automático:**
+- Cada `git commit` ejecutará automáticamente detect-secrets
+- Si detecta un secreto, el commit será **bloqueado**
+
+**Manual (verificación):**
+```bash
+# Escanear todo el proyecto
+detect-secrets scan --baseline .secrets.baseline
+
+# Verificar archivo específico
+detect-secrets scan src/main.py
+```
+
+### Si el Hook Bloquea tu Commit
+
+1. **Revisa el archivo marcado** - Verifica si es un secreto real
+2. **Mueve a `.env`** - Si es credencial real, usa variables de entorno
+3. **Falso positivo legítimo** - Audita el baseline:
+   ```bash
+   detect-secrets audit .secrets.baseline
+   ```
+
+---
+
 ## 10. Próximos Pasos
 
 1. **Testing E2E Endpoint Multimodal:** Validar con datos reales
