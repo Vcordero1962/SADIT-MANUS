@@ -1,5 +1,10 @@
 # CLAUDE CONTEXT - SADIT v1.3 Multimodal
 
+> **🎯 PARA CONTINUAR MAÑANA: Lee `NEXT_SESSION.md` primero**  
+> Ese archivo contiene el punto exacto de continuidad y la próxima tarea prioritaria.
+
+---
+
 ## 1. Project Identity & Goal
 
 **Project:** SADIT v1.3 (Multi-Tenant Multimodal Medical AI)  
