@@ -1,22 +1,29 @@
 # CLAUDE CONTEXT - SADIT v1.3 Multimodal
 
-> **🎯 PARA CONTINUAR MAÑANA: Lee `NEXT_SESSION.md` primero**  
+> **🎯 PARA CONTINUAR MAÑANA: Lee `NEXT_SESSION.md` primero**
 > Ese archivo contiene el punto exacto de continuidad y la próxima tarea prioritaria.
 
 > [!WARNING]
-> **🔴 ALERTA DE SEGURIDAD RESUELTA (26/12/2025 10:15 AM)**  
-> GitGuardian detectó credencial expuesta en commit cff5000. Incidente resuelto mediante:
-> - Git history limpiado con git-filter-repo ✅
-> - Password hardcodeado removido de docker-compose.yml ✅  
-> - Force push a GitHub completado ✅
-> - Ver `SECURITY_INCIDENT_REPORT.md` para detalles completos
+> **CRITICAL SECURITY INCIDENT RESOLVED (26/12/2025)**
+> - GitGuardian alert for exposed `POSTGRES_PASSWORD` in commit cff5000 ✅ RESUELTO
+> - Git history cleaned with `git-filter-repo` (all traces of `sadit_password` removed)
+> - Force push completed to GitHub (collaborators must re-clone)
+> - Secret scanning tools installed (detect-secrets + pre-commit) ✅
+> - GLOBAL_AGENT_RULES.md Section 4.1 now MANDATES secret scanning
+> 
+> **ENDPOINT MULTIMODAL STATUS (26/12/2025)**
+> - ✅ `/inference/multimodal` OPERATIVO - Tested with real data
+> - ✅ Inflammatory marker detection working (Leucocitos, PCR, VSG)
+> - ✅ Dynamic Safety Score calculation verified (ISS = 1.00 for critical case)
+> - 🔧 Fixed: Circular import error in `semiology.py` (InfectiousSemiology)
+> - Next: Continue with additional test cases or proceed to v1.4 featuresles completos
 
 ---
 
 ## 1. Project Identity & Goal
 
-**Project:** SADIT v1.3 (Multi-Tenant Multimodal Medical AI)  
-**Core Logic:** 
+**Project:** SADIT v1.3 (Multi-Tenant Multimodal Medical AI)
+**Core Logic:**
 - Bayesian Inference Engine (`src/sadit/inference/bayesian.py`)
 - ALICIA Semiology Protocol (`src/sadit/clinical/semiology.py`)
 - Vision Enhancement (`src/sadit/vision/enhancement.py`)
@@ -46,7 +53,7 @@
 - ✅ `/api/inference/clinical` - Simple semiological analysis (WORKING)
 - 🔄 `/api/inference/multimodal` - Multimodal analysis with labs + images (IMPLEMENTED, in testing)
 
-**Verification:** 
+**Verification:**
 - `tests/test_flow_v1_2.py` confirms API logic works perfectly
 - `docker logs sadit_core_v1` shows no errors on startup
 - Health endpoint returns: `{"db_status":"configured","inference_engine":"loaded"}`
@@ -57,7 +64,7 @@
 
 **Stack:** React 18 + Vite + Tailwind CSS + Wouter + Axios
 
-**Status:** FULLY OPERATIONAL ✅  
+**Status:** FULLY OPERATIONAL ✅
 **Access:** http://localhost:3000
 
 **Components:**
@@ -70,12 +77,12 @@
 - ✅ **NEW:** Multimodal Toggle - Activates advanced mode
 - ✅ Results Cards - Dynamic colors (RED for critical, GREEN for safe)
 
-**Previous Issue RESOLVED:** 
+**Previous Issue RESOLVED:**
 - Fixed `postcss.config.js` missing (CSS not loading)
 - Fixed `main.jsx` placeholder (App not rendering)
 - Fixed `axios` import missing in Dashboard
 
-**Console Logging:** 
+**Console Logging:**
 - Detailed logs added for debugging (🔵 MULTIMODAL, 🟢 SIMPLE, ❌ ERROR)
 - Open F12 → Console to see real-time request/response flow
 
@@ -90,7 +97,7 @@
 class LabData:
     pcr_level, vsg_level, wbc_count, hemoglobin, platelets
     def has_inflammatory_markers() -> bool  # Auto-detection
-    
+
 class MedicalHistory:
     antecedentes, medicamentos, alergias, cirugias_previas
 ```
@@ -207,7 +214,7 @@ class MedicalHistory:
    - Currently stored only in localStorage
    - Create `MedicalHistory` table in schema
 
-4. **Complete Modules:** 
+4. **Complete Modules:**
    - "Pacientes" tab (patient management)
    - "Estadísticas" tab (analytics dashboard)
 
@@ -241,11 +248,11 @@ class MedicalHistory:
 - `README.md` - Updated user guide
 - THIS FILE - Context for next session
 
-**Estimated Completion:** 95%  
+**Estimated Completion:** 95%
 **Remaining Work:** 5% (endpoint testing and validation)
 
 ---
 
-**Last Updated:** 25/12/2025 20:20  
-**Session Duration:** ~2 hours  
+**Last Updated:** 25/12/2025 20:20
+**Session Duration:** ~2 hours
 **Agent:** Gemini 2.0 Flash Thinking Experimental

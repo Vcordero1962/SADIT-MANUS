@@ -6,8 +6,8 @@
 ```
 ✅ SERVIDOR VITE CORRIENDO CORRECTAMENTE
 
-➜  Local:   http://localhost:3000/ 
-➜  Network: http://10.0.0.206:3000/  
+➜  Local:   http://localhost:3000/
+➜  Network: http://10.0.0.206:3000/
 ➜  Network: http://172.17.192.1:3000/
 
 Dependencias optimizadas: wouter, lucide-react, axios

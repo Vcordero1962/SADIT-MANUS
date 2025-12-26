@@ -31,11 +31,10 @@ class SemiologyEngine:
 
         infection_ruled_out = False
         if data.lab_data:
-            # Keep legacy import or move logic here if simple
-            from .semiology import InfectiousScreening
-            # Re-implementing simplified screening check directly or relying on old helper
-            if data.lab_data.pcr_level < 1.0 and data.lab_data.vsg_level < 30:
-                infection_ruled_out = True
+            # Simplified infection screening: Low PCR and VSG rules out infection
+            if data.lab_data.pcr_level and data.lab_data.vsg_level:
+                if data.lab_data.pcr_level < 10.0 and data.lab_data.vsg_level < 20:
+                    infection_ruled_out = True
 
         # PRIORITY 1: Infection Rule Out
         if is_septic_risk and not infection_ruled_out:

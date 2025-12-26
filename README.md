@@ -1,14 +1,14 @@
 # SADIT v1.3: Sistema de Apoyo al Diagnóstico Multimodal (Multi-Tenant)
 
-**Estado Actual:** 🟡 PRODUCTION READY (Backend 100% | Frontend 100% | Endpoint Multimodal en Testing)  
-**Normativa:** ISO 13485, HIPAA (Schema Isolation)  
+**Estado Actual:** 🟡 PRODUCTION READY (Backend 100% | Frontend 100% | Endpoint Multimodal en Testing)
+**Normativa:** ISO 13485, HIPAA (Schema Isolation)
 **Versión:** 1.3.0 - Multimodal Complete
 
 ---
 
 ## 1. Descripción del Sistema
 
-SADIT es una plataforma médica de "Human-in-the-Loop" que utiliza Inteligencia Artificial (Bayesiana + Protocolo ALICIA) para asistir en el diagnóstico de patologías osteomioarticulares e infecciosas. 
+SADIT es una plataforma médica de "Human-in-the-Loop" que utiliza Inteligencia Artificial (Bayesiana + Protocolo ALICIA) para asistir en el diagnóstico de patologías osteomioarticulares e infecciosas.
 
 **v1.3 introduce análisis multimodal completo:**
 - ✅ Semiología (Protocolo ALICIA)
@@ -263,6 +263,6 @@ detect-secrets scan src/main.py
 
 ## 11. Contacto y Soporte
 
-**Repositorio:** https://github.com/Vcordero1962/veterinaria-manus  
-**Versión:** 1.3.0  
+**Repositorio:** https://github.com/Vcordero1962/veterinaria-manus
+**Versión:** 1.3.0
 **Última Actualización:** 25/12/2025

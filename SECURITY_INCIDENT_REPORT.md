@@ -1,18 +1,18 @@
 # GitGuardian Security Incident Report
 
-**Date:** 2025-12-26  
-**Severity:** 🔴 CRITICAL  
+**Date:** 2025-12-26
+**Severity:** 🔴 CRITICAL
 **Status:** ✅ RESOLVED
 
 ---
 
 ## 1. Incident Summary
 
-**Alert Source:** GitGuardian  
-**Alert Type:** Company Email Password  
-**Detection Time:** 2025-12-26 02:49:44 AM (UTC)  
-**Exposed Credential:** PostgreSQL database password (`sadit_password`)  
-**Affected Commit:** `cff5000` (chore: Session closure - Security hardening)  
+**Alert Source:** GitGuardian
+**Alert Type:** Company Email Password
+**Detection Time:** 2025-12-26 02:49:44 AM (UTC)
+**Exposed Credential:** PostgreSQL database password (`sadit_password`)
+**Affected Commit:** `cff5000` (chore: Session closure - Security hardening)
 **Affected File:** `docker-compose.yml`
 
 ---
@@ -41,10 +41,10 @@ The incident occurred when `docker-compose.yml` was committed with a hardcoded d
 ## 3. Remediation Actions Taken
 
 ### 3.1 Git History Cleanup
-✅ **Tool Used:** `git-filter-repo` (v2.47.0)  
-✅ **Action:** Replaced all occurrences of `sadit_password` with `***REDACTED***`  
-✅ **Commits Processed:** 2 commits  
-✅ **Duration:** 1.03 seconds  
+✅ **Tool Used:** `git-filter-repo` (v2.47.0)
+✅ **Action:** Replaced all occurrences of `sadit_password` with `***REDACTED***`
+✅ **Commits Processed:** 2 commits
+✅ **Duration:** 1.03 seconds
 
 **Command Executed:**
 ```powershell
@@ -58,8 +58,8 @@ git log --all --full-history -S"sadit_password"
 ```
 
 ### 3.2 Source Code Update
-✅ **File Modified:** `docker-compose.yml`  
-✅ **Change:** Removed default password fallback  
+✅ **File Modified:** `docker-compose.yml`
+✅ **Change:** Removed default password fallback
 
 **Before:**
 ```yaml
@@ -74,9 +74,9 @@ git log --all --full-history -S"sadit_password"
 **Commit:** `7d3208a` - "security: Remove default password from docker-compose.yml"
 
 ### 3.3 Repository Push
-✅ **Force Push Executed:** 2025-12-26 10:14 AM  
-✅ **Branches Updated:** `main`  
-✅ **Tags Updated:** All tags force-pushed  
+✅ **Force Push Executed:** 2025-12-26 10:14 AM
+✅ **Branches Updated:** `main`
+✅ **Tags Updated:** All tags force-pushed
 
 ---
 
@@ -198,12 +198,12 @@ PS> cat .gitignore | Select-String ".env"
 
 ## 9. Incident Closure
 
-**Resolution Time:** ~30 minutes  
-**Status:** ✅ **RESOLVED**  
-**Follow-up Required:** User to verify GitGuardian alert closure  
+**Resolution Time:** ~30 minutes
+**Status:** ✅ **RESOLVED**
+**Follow-up Required:** User to verify GitGuardian alert closure
 
-**Incident Closed By:** AI Agent (Gemini 2.0)  
-**Reviewed By:** [Pending user verification]  
+**Incident Closed By:** AI Agent (Gemini 2.0)
+**Reviewed By:** [Pending user verification]
 **Closure Date:** 2025-12-26
 
 ---

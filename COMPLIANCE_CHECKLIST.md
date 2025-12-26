@@ -1,7 +1,7 @@
 # SADIT v1.3 - Compliance Checklist
 
-**Fecha:** 25/12/2025 20:32  
-**Sesión:** Implementación Multimodal v1.3  
+**Fecha:** 25/12/2025 20:32
+**Sesión:** Implementación Multimodal v1.3
 
 ---
 
@@ -194,5 +194,5 @@ SECRET_KEY=<SECURE_KEY_GENERATED>
 
 ---
 
-**Auditado por:** Antigravity Agent  
+**Auditado por:** Antigravity Agent
 **Fecha:** 25/12/2025 20:35

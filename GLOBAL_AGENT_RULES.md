@@ -71,7 +71,7 @@ Antes de dar por finalizada cualquier tarea de infraestructura, **VERIFICAR**:
 1. ✅ **ANTES de codificar:** Asegúrate que `pre-commit install` esté ejecutado
 2. ✅ **AL codificar:** NUNCA escribas claves API/passwords en texto plano. Usa `.env`
 3. ✅ **AL hacer commit:** El hook detectará automáticamente secretos
-4. ❌ **SI el hook BLOQUEA:** 
+4. ❌ **SI el hook BLOQUEA:**
    - Revisa el archivo marcado
    - Mueve el secreto a `.env`
    - Si es falso positivo legítimo: `detect-secrets audit .secrets.baseline`

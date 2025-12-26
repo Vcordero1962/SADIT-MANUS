@@ -22,7 +22,7 @@ class SADIT_Compliance_Checker:
     Gatekeeper for SADIT v1.1.5.
     Enforces ISO 14971 (Risk Management) and Evidence-Based Medicine.
     """
-    
+
     MIN_SNR_THRESHOLD = 15.0  # Decibels
     MIN_RESOLUTION = (1024, 1024)
 
@@ -37,16 +37,16 @@ class SADIT_Compliance_Checker:
              raise SafetyException(
                 f"Image resolution {image_array.shape} below safety threshold {SADIT_Compliance_Checker.MIN_RESOLUTION}."
             )
-        
+
         # Check Signal-to-Noise Ratio (Simplified Heuristic)
         signal = np.mean(image_array)
         noise = np.std(image_array)
         if noise == 0: noise = 1e-5 # Avoid div by zero
         snr = 20 * np.log10(signal / noise)
-        
+
         if snr < SADIT_Compliance_Checker.MIN_SNR_THRESHOLD:
             raise SafetyException(f"Image SNR {snr:.2f}dB is too low. Risk of artifact misinterpretation.")
-        
+
         return True
 
     @staticmethod
@@ -58,9 +58,9 @@ class SADIT_Compliance_Checker:
             raise EvidenceException(
                 f"Validation Failed: Diagnosis '{result.diagnosis}' requires a citation_source."
             )
-        
+
         if result.probability > 0.99 or result.probability < 0.01:
              # Warning only, clinical certainty is rarely 100%
              pass
-        
+
         return True

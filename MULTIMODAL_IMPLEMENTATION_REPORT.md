@@ -1,8 +1,8 @@
 # SADIT v1.3 - Reporte de Implementación Multimodal
 
-**Fecha:** 25/12/2025 19:20  
-**Versión:** v1.3 MULTIMODAL COMPLETE  
-**Tiempo de Implementación:** 35 minutos  
+**Fecha:** 25/12/2025 19:20
+**Versión:** v1.3 MULTIMODAL COMPLETE
+**Tiempo de Implementación:** 35 minutos
 
 ---
 
