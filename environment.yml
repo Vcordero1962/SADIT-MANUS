@@ -1,0 +1,22 @@
+name: sadit_env
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.10
+  - numpy>=1.23.0
+  - pandas>=1.5.0
+  - pip
+  - pip:
+    - pydicom>=2.4.0
+    - SimpleITK>=2.2.0
+    - opencv-python>=4.7.0
+    - spacy>=3.5.0
+    - scikit-learn>=1.2.0
+    - pydantic>=2.0.0
+    # Bio-Medical & Scientific libraries
+    - scipy>=1.10.0
+    - matplotlib>=3.7.0
+    - scikit-image>=0.20.0
+    - pgmpy>=0.1.23
+    - librosa>=0.10.0

@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  sadit_core:
+    build: .
+    container_name: sadit_core_v1
+    volumes:
+      # PERSISTENCE: Named volume for data safety
+      - sadit_data:/app/data
+      - sadit_learning_core:/app/learning
+      # BIND MOUNT: For active development (optional, but good for local dev)
+      - ./src:/app/src
+    environment:
+      - SADIT_ENV=development
+      - LOG_LEVEL=INFO
+      - DATABASE_URL=postgresql://sadit_user:sadit_password@db:5432/sadit_multitenant_db
+    ports:
+      - "8000:8000"
+    command: uvicorn src.main:app --host 0.0.0.0 --port 8000 --reload
+    depends_on:
+      - db
+    restart: unless-stopped
+
+  db:
+    image: postgres:15
+    container_name: sadit_db_v1
+    volumes:
+      - sadit_db_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=sadit_user
+      - POSTGRES_PASSWORD=sadit_password
+      - POSTGRES_DB=sadit_multitenant_db
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+
+volumes:
+  sadit_data:
+    driver: local
+  sadit_learning_core:
+    driver: local
+  sadit_db_data:
+    driver: local
