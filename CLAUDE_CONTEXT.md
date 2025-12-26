@@ -3,6 +3,14 @@
 > **🎯 PARA CONTINUAR MAÑANA: Lee `NEXT_SESSION.md` primero**  
 > Ese archivo contiene el punto exacto de continuidad y la próxima tarea prioritaria.
 
+> [!WARNING]
+> **🔴 ALERTA DE SEGURIDAD RESUELTA (26/12/2025 10:15 AM)**  
+> GitGuardian detectó credencial expuesta en commit cff5000. Incidente resuelto mediante:
+> - Git history limpiado con git-filter-repo ✅
+> - Password hardcodeado removido de docker-compose.yml ✅  
+> - Force push a GitHub completado ✅
+> - Ver `SECURITY_INCIDENT_REPORT.md` para detalles completos
+
 ---
 
 ## 1. Project Identity & Goal
